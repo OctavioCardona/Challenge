@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset = "UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Challenge Encriptador Alura</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+
+            <div class="caja-titulo">
+                <img src="imagenes/Vector.png">
+                
+            </div>
+            
+        </header>
+
+        <main>
+            
+            <div class="caja-principal">
+
+                <div class="lado-izquierdo">
+                    <textarea name="areaescribir" class="escribir" id="excribir-texto" cols="30" rows="10" placeholder="Ingresa el texto aqui" required></textarea>
+                    <img src="imagenes/importante.png" class="simbolo-informacion">
+                    <p class="simbolo-informacion">solo letras minusculas y sin acentos</p>
+                    <input class="botones" id="buton1" type="button" value="Encriptar" onclick="codificarTexto()">
+                    <input class="botones" id="buton2" type="button" value="Desencriptar" onclick="descodificarTexto()" >
+                </div>
+                
+                <textarea class="mostrar" cols="50" rows="10"  readonly></textarea>
+                <img src="imagenes/Muñeco.png" id="imagen">
+                <textarea id="primer-mensaje" readonly>Ningún mensaje fue encontrado</textarea>
+                <textarea id="segundo-mensaje" readonly>Ingresa el texto que desea encriptar o desencriptar</textarea>
+                <input class="botones" id="buton3" type="button" value="Copiar" onclick="copiar()" >
+
+           </div>
+
+        </main>
+        <script>
+
+            document.getElementById("excribir-texto").focus();
+
+            function codificarTexto(){
+                document.getElementById("imagen").style.visibility = "hidden";
+                document.getElementById("primer-mensaje").style.visibility = "hidden";
+                document.getElementById("segundo-mensaje").style.visibility = "hidden";
+                document.getElementById("buton3").style.display = "block";
+                var textoRecibido = document.getElementById("excribir-texto").value;
+                var textoMostrado = document.querySelector(".mostrar");
+                var textoNuevo=[];
+
+                for (var i = 0; i < textoRecibido.length; i++){
+                    if (textoRecibido[i]=="a"){
+
+                        textoNuevo.push("ai");
+
+                    } else if(textoRecibido[i]=="e"){
+
+                        textoNuevo.push("enter");
+
+                    } else if(textoRecibido[i]=="i"){
+
+                        textoNuevo.push("imes");
+
+                    } else if(textoRecibido[i]=="o"){
+
+                        textoNuevo.push("ober");
+
+                    } else if(textoRecibido[i]=="u"){
+
+                        textoNuevo.push("ufat");
+                        
+                    } else {
+                        textoNuevo.push(textoRecibido[i])
+                    }
+                }
+                textoNuevo = textoNuevo.toString().replaceAll(',','');
+                textoMostrado.innerText = textoNuevo;
+
+                document.getElementById("excribir-texto").value = "";
+                document.getElementById("excribir-texto").focus();
+            }
+            function descodificarTexto(){
+                document.getElementById("imagen").style.visibility = "hidden";
+                var textoRecibido = document.getElementById("excribir-texto").value;
+                var textoMostrado = document.querySelector(".mostrar");
+                var textoNuevo;
+
+                textoNuevo = textoRecibido.replaceAll('ai','a');
+                textoNuevo = textoNuevo.replaceAll('enter','e');
+                textoNuevo = textoNuevo.replaceAll('imes','i');
+                textoNuevo = textoNuevo.replaceAll('ober','o');
+                textoNuevo = textoNuevo.replaceAll('ufat','u');
+                textoMostrado.innerText = textoNuevo;
+
+                document.getElementById("excribir-texto").value = "";
+                document.getElementById("excribir-texto").focus();
+
+            }
+            function copiar() {
+                var copiarTexto = document.querySelector(".mostrar");
+                copiarTexto.select();
+                document.execCommand("copy");
+                document.getElementById("excribir-texto").focus();
+            }
+            document.querySelector("#buton3").addEventListener("click", copiar);
+            
+    
+        </script>
+
+        <footer>
+            <p class="copyright">&copy Copyright Encriptador/Desencriptador Octavio Cardona - 2023</p>
+        </footer>
+
+    </body>
+
+</html>

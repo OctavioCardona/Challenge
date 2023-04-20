@@ -1,0 +1,247 @@
+body{
+    background: #E5E5E5;
+    
+}
+.caja-titulo{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+    padding: 40px 84px;
+}
+.caja-principal{
+    position: relative;
+    width: 1200px;
+    margin: 0 auto;
+}
+.lado-izquierdo{
+    padding: 40px 156px;
+}
+.escribir{
+    display: block;
+    margin-bottom: 80px;
+    background: #E5E5E5;
+    border: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: #0A3871;
+    outline: none;
+    resize: none;
+}
+textarea::placeholder{
+    color: #0A3871;
+}
+.simbolo-informacion{
+    position: absolute;
+    top: 470px;
+    text-indent: 25px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+}
+.botones{
+    width: 328px;
+    height: 67px;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    margin-right: 24px;;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s all;
+}
+.botones:active{
+    transform: scale(0.98);
+    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
+#buton1{
+    background: #0A3871;
+    color: #FFFFFF;
+}
+#buton2{
+    background: #D8DFE8;
+    color: #0A3871;
+}
+#buton3{
+    position: absolute;
+    left: 950px;
+    top: 495px;
+    background: #FFFFFF;
+    color: #0A3871;
+    display: none;
+}
+.mostrar{
+    position: absolute;
+    top: -100px;
+    left: 900px;
+    height: 700px;
+    width: 400px;
+    border-radius: 32px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    color: #0A3871;
+    padding: 10px 0 0 20px;
+    outline: none;
+    resize: none;
+}
+#imagen{
+    position: absolute;
+    width: 336px;
+    height: 304px;
+    left: 950px;
+    top: 33px;
+}
+#primer-mensaje{
+    position: absolute;
+    top: 350px;
+    left: 950px;
+    width: 316px;
+    height: 58px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #343A40;
+    outline: none;
+    resize: none;
+    border: none;
+}
+#segundo-mensaje{
+    position: absolute;
+    top: 410px;
+    left: 950px;
+    width: 316px;
+    height: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #495057;
+    outline: none;
+    resize: none;
+    border: none;
+}
+footer{
+    text-align: center;
+}
+.copyright{
+    font-size: 13px;
+}
+
+@media (max-width: 1024px) {
+    .caja-titulo, .caja-principal, .lado-izquierdo{
+        width: auto;
+        margin: 0 8px;
+        padding: 74px 20px 0 20px;
+    }
+    .escribir{
+        width: 688px;
+    }
+    .simbolo-informacion{
+        top: 580px;
+    }
+    .botones{
+        width: 302px;
+    }
+    .mostrar{
+        position: absolute;
+        top: 717px;
+        left: 24px;
+        width: 688px;
+        height: 386px;
+    }
+    #imagen{
+        display: none;
+    }
+    #primer-mensaje{
+        position: absolute;
+        top: 880px;
+        left: 65px;
+        width: 624px;
+        height: 58px;   
+    }
+    #segundo-mensaje{
+        position: absolute;
+        top: 908px;
+        left: 65px;
+        width: 624px;
+        height: 48px;
+    }
+    #buton3{
+        top: 1030px;
+        left: 65px;
+        width: 624px;
+    }
+    footer{
+        position: absolute;
+        top: 1260px;
+        left: 200px;
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .caja-titulo, .caja-principal, .lado-izquierdo{
+        width: auto;
+        margin: 0 8px;
+        padding: 24px 8px 0 8px;
+    }
+    .escribir, .botones{
+        width: 343px;
+    }
+    #buton2{
+        margin-top: 30px;
+    }
+    .mostrar{
+        position: absolute;
+        top: 717px;
+        left: 24px;
+        width: 327px;
+        height: 386px;
+    }
+    #imagen{
+        display: none;
+    }
+    #primer-mensaje{
+        position: absolute;
+        top: 860px;
+        left: 65px;
+        width: 263px;
+        height: 58px;   
+    }
+    #segundo-mensaje{
+        position: absolute;
+        top: 928px;
+        left: 95px;
+        width: 213px;
+        height: 48px;
+    }
+    #buton3{
+        top: 1120px;
+        left: 24px;
+        width: 343px;
+    }
+    footer{
+        position: absolute;
+        top: 1270px;
+        left: 34px;
+        margin: 10px;
+    }
+}
+
